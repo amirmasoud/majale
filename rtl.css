@@ -1,0 +1,34 @@
+/*
+Theme Name: Majale
+Description: Adds support for languages written in a Right To Left (RTL) direction.
+
+See http://codex.wordpress.org/Right_to_Left_Language_Support
+*/
+
+body {
+	direction: rtl;
+}
+
+#cancel-comment-reply-link,
+.woocommerce-account .addresses .title .edit, 
+.woocommerce-account ul.digital-downloads li .count {
+	float: left;
+}
+
+.woocommerce-account .addresses .title h3 {
+	float: right;
+}
+
+.blog-post-link .bg,
+.blog-post-quote .bg {
+    left: 15px;
+    right: auto;
+}
+
+.fa-chevron-left:before {
+    content: "\f054";
+}
+
+.fa-chevron-right:before {
+    content: "\f053";
+}
