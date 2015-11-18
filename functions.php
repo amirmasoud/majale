@@ -87,9 +87,7 @@ if ( ! function_exists( 'majale_setup' ) ) :
 
 		// Enable support for Post Thumbnails, and declare four sizes.
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'majale-large', 300, 300, array( 'center', 'center' ) );
-		add_image_size( 'majale-medium', 300, 150, array( 'center', 'center' ) );
-		add_image_size( 'majale-small', 150, 150, array( 'center', 'center' ) );
+		add_image_size( 'majale-small', 9999, 150, array( 'center', 'center' ) );
 		add_image_size( 'majale-home', 600, 9999, array( 'center', 'center' ) );
 
 		// register navigaion menu
@@ -280,7 +278,7 @@ if ( ! function_exists('majale_thumbnail') ) :
 			GLOBAL $post;
 			
 			// get thumbnail url with given size.
-			$url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), '$size' );
+			$url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), $size );
 
 			// return it as an CSS property.
 			$backgroundImage = 'background-image: url(' . $url[0] . ');';
@@ -294,7 +292,8 @@ if ( ! function_exists('majale_home_thumbnail') ) :
 
 	/**
 	 * home thumbnail - shown thumbnail on index/home page
-	 * 
+	 *
+	 * @todo thumbnail
 	 * @return image
 	 */
 	function majale_home_thumbnail() {

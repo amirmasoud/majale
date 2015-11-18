@@ -563,8 +563,6 @@ body.error404 {
 .zone {
 	position: relative;
 
-	box-shadow: 0 0 200px 4px #000 inset;
-
 	background-image: url(images/bg.png);
 	background-color: rgba(0, 0, 0, .7);
 	background-repeat: no-repeat;
@@ -586,7 +584,7 @@ body.error404 {
 
 .zone:hover, 
 .zone:focus {
-	box-shadow: 0 0 200px 1px #333 inset;
+	box-shadow: 0 0 60px 1px #333 inset;
 
 	transition: all ease .3s;
 	-o-transition: all ease .3s;
