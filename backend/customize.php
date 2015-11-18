@@ -81,7 +81,7 @@ class majale_redux_customize
 	 */
 	public static function favicon()
 	{
-		@self::iie(array('favicon', 'url'), '<link rel="shortcut icon" type="image/x-icon" href="', '">' );
+		self::iie(array('favicon', 'url'), '<link rel="shortcut icon" type="image/x-icon" href="', '">' );
 	}
 
 	/**
@@ -666,13 +666,25 @@ class majale_redux_customize
      */
     protected static function post_meta_color()
     {
+    	// border-bottom
     	self::iie(array('post_meta', 'rgba'), '.woocommerce div.product .woocommerce-tabs ul.tabs:before, .modal-header {border-bottom: 1px solid ', ' !important}');
+
+    	// border-color
     	self::iie(array('post_meta', 'rgba'), 'table, .woocommerce table.shop_table td, .woocommerce .cart-collaterals .cart_totals table, .woocommerce .cart-collaterals .cart_totals td, .woocommerce .cart-collaterals .cart_totals th, .woocommerce table.shop_table tbody th, .woocommerce table.shop_table tfoot td, .woocommerce table.shop_table tfoot th, .woocommerce-checkout #payment div.payment_box, .woocommerce-checkout #payment ul.payment_methods {border-color: ', ' !important}');
-    	self::iie(array('post_meta', 'rgba'), '.modal-footer {border-top: 1px solid ', ' !important}');
+    	
+    	// border-top
+    	self::iie(array('post_meta', 'rgba'), '.modal-footer, .table>tbody>tr>th, .table>tfoot>tr>th, table>tbody>tr>td, .table>tfoot>tr>td {border-top: 1px solid ', ' !important}');
+
+    	// background
     	self::iie(array('post_meta', 'rgba'), '.woocommerce #reviews #comments ol.commentlist li img.avatar {background: ', ' !important}');
+
+    	// border
     	self::iie(array('post_meta', 'rgba'), '.woocommerce div.product .woocommerce-tabs ul.tabs li, .woocommerce #reviews #comments ol.commentlist li .comment-text, .woocommerce #reviews #comments ol.commentlist li img.avatar {border: 1px solid ', ' !important}');
-    	self::iie(array('post_meta', 'rgba'), '.woocommerce-checkout #payment div.payment_box:after {border-bottom-color: ', ' !important}');
-    	self::iie(array('post_background', 'background-color'), '.woocommerce div.product .woocommerce-tabs ul.tabs li.active {border-bottom-color: ', ' !important}');
+
+    	// border-bottom-color
+    	self::iie(array('post_meta', 'rgba'), '.woocommerce-checkout #payment div.payment_box:after, .woocommerce div.product .woocommerce-tabs ul.tabs li.active, .table>thead>tr>th {border-bottom-color: ', ' !important}');
+
+
     }
 
     private static function logo_top_margin()
