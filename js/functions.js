@@ -184,4 +184,7 @@ jQuery(document).ready(function($){
     $('.mobile-menu').hide();
     $('.main-navigation').show();
   }
+
+  // set default table style to Bootstrap table style
+  $('table').addClass('table');
 });
